@@ -1,0 +1,37 @@
+import random
+import sys
+
+food_selection = ["chicken noodle soup", "tomato soup", "hamburger", "sushi", "rice and bacon"]
+starting_input = input("Welcome would please type what you'd like to do.\n "
+                       "see food list,\n "
+                       "add food to food list,\n "
+                       "print random item from food list: ").lower()
+
+
+if starting_input == "add food to food list":
+    user_added_food = input("Please type to food you'd like to add: ")
+    food_selection.append(user_added_food)
+    adding_more = input("would you like to add more food to the food list? (y/n): ").lower()
+    while adding_more == "yes":
+        user_added_food = input("Please type to food you'd like to add: ")
+        adding_more = input("would you like to add more to the food list? (y/n): ")
+    if adding_more == "no":
+        print("Food added!", food_selection)
+        reinputting_food = input("Would you like to see all options again? (y/n): ")
+        if reinputting_food == "yes":
+            print(starting_input)
+
+
+if starting_input == "print random item from food list":
+    print("a random food for you to cook is:", random.choice(food_selection))
+    printing_again = input("would you like to see another food to cook? (y/n): ").lower()
+    while printing_again == "yes":
+        print("a random food for you to cook is:", random.choice(food_selection))
+        printing_again = input("Would you like to see another food to cook? (y/n): ")
+    else:
+        print("Goodbye!")
+        sys.exit()
+
+if starting_input == "see food list":
+    print(food_selection)
+    sys.exit()
