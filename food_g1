@@ -2,7 +2,7 @@ import random
 import sys
 
 food_selection = ["chicken noodle soup", "tomato soup", "hamburger", "sushi", "rice and bacon"]
-starting_input = input("Welcome would please type what you'd like to do.\n "
+starting_input = input("Welcome, please type what you'd like to do.\n "
                        "see food list,\n "
                        "add food to food list,\n "
                        "print random item from food list: ").lower()
@@ -13,7 +13,7 @@ if starting_input == "add food to food list":
     food_selection.append(user_added_food)
     adding_more = input("would you like to add more food to the food list? (y/n): ").lower()
     while adding_more == "yes":
-        user_added_food = input("Please type to food you'd like to add: ")
+        user_added_food = input("Please type the food you'd like to add: ")
         adding_more = input("would you like to add more to the food list? (y/n): ")
     if adding_more == "no":
         print("Food added!", food_selection)
